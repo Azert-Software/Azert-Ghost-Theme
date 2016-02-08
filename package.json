@@ -1,6 +1,25 @@
 {
   "name": "Azert",
   "version": "1.0.0",
-  "author":"Mark Smith",
-  "description": "Theme for a technical, coding focused blog."
+  "author": "Mark Smith",
+  "description": "Theme for a technical, coding focused blog.",
+  "main": "grunt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marknumskull/Azert-Ghost-Theme.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marknumskull/Azert-Ghost-Theme/issues"
+  },
+  "homepage": "https://github.com/Marknumskull/Azert-Ghost-Theme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.1"
+  }
 }
