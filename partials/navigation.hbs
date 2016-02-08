@@ -1,0 +1,15 @@
+<div class="navbar-fixed">
+<nav class="black-text z-depth-0 white">
+  <div class="container ">
+   <div class="nav-wrapper">
+     <a class="brand-logo black-text" href="{{@blog.url}}">{{@blog.title}}</a>
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <ul class="right hide-on-med-and-down">
+         {{#foreach navigation}}
+             <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a class="black-text" href="{{url absolute="true"}}">{{label}}</a></li>
+         {{/foreach}}
+     </ul>
+      </div>
+  </div>
+ </nav>
+ </div>
