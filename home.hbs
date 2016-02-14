@@ -3,14 +3,21 @@
 
 {{> header}}
 
-<div class="section white" style="height:500px">
-  <div class="container">
-<p class="flow-text">Welcome to Azert Software, the blogging home of Mark Smith. I am a
-Software Developer based in Belfast and loved all things tech and interesting.
-</p>
+<div class="section">
+  <div class="row">
+    <div class="container">
+      <div class="card-panel teal">
+      <p class="flow-text white-text">Welcome to Azert Software, the blogging home of Mark Smith and place to showcase personal projects I find the time to complete.
+        I am a Software Developer based in Belfast, Northern Ireland and love all things tech and interesting!
+      </p>
+    </div>
+    <header class="parent">
+      <h2 class="left flow-text">Latest Posts</h2>
+      <a class="right" href="/tag" tooltip="View All">View all posts</a>
+    </header>
+    {{> latest-posts}}
+    {{> promo}}
+   </div>
 
-  {{#post}}
-    {{content}}
-  {{/post}}
-</div>
+  </div>
 </div>

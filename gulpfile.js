@@ -47,7 +47,7 @@ gulp.task('less',function(){
 //////// hbs tasks
  ////////////////////////////////////////////////////////
 gulp.task('hbs',function(){
-    gulp.src('*.hbs')
+    gulp.src(['*.hbs','partials/**/*.hbs'])
     .pipe(reload({stream:true}));
 });
 
