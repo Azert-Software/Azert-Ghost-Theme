@@ -25,7 +25,6 @@
 <body class="{{body_class}}">
   <div class="row">
     {{navigation}}
-
     {{! Everything else gets inserted here }}
     {{{body}}}
 
@@ -43,5 +42,9 @@
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/azert.js"}}"></script>
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace(
+"HOST", location.hostname));
+//]]></script>
 </body>
 </html>
