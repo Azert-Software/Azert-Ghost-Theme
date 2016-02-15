@@ -1,6 +1,10 @@
 /* Global Variables live here */
 @black:#000;
 
+/* Size stuff */
+@x-large:15rem;
+@xx-large:25rem;
+
 /* Positioning */
 .parent{
     display: block;
@@ -28,4 +32,34 @@
     margin-left:-8.5rem;
     position: absolute;
   }
+}
+
+.promo{
+  height:@xx-large;
+  padding:0.5rem;
+  i{
+    font-size:@x-large;
+  }
+  p{
+    color:black;
+  }
+}
+
+.card-image{
+  span{
+    width:100%;
+    background:black;
+    opacity: 0.7;
+  }
+}
+
+.parent{
+  a.right-link{
+    position: absolute;
+    right:0;
+    bottom:0;
+    margin-bottom:20px;
+    text-transform: uppercase;
+  }
+
 }

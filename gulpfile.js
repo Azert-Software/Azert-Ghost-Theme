@@ -47,7 +47,7 @@ gulp.task('less',function(){
 //////// hbs tasks
  ////////////////////////////////////////////////////////
 gulp.task('hbs',function(){
-    gulp.src(['*.hbs','partials/**/*.hbs'])
+    gulp.src(['*/**/*.hbs'])
     .pipe(reload({stream:true}));
 });
 
@@ -69,6 +69,7 @@ gulp.task('watch',function(){
     gulp.watch('assets/js/**/*.ts',['scripts'])
     gulp.watch('assets/css/**/*.less',['less'])
     gulp.watch('*.hbs',['hbs'])
+    gulp.watch('partials/**/*.hbs',['hbs'])
 })
 
 
