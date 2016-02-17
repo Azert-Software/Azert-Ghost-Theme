@@ -16,8 +16,17 @@
   margin-left:auto;
   margin-right:auto;
 }
+/* Navigation */
+.brand-logo{
+  img{
+    width:1.25em;
+    position:relative;
+    top:.25em;
+  }
+}
 
-/* One hell of a block style comment! */
+
+/* Site headers */
 
 .feature-header{
   height:30rem;
@@ -33,6 +42,8 @@
     position: absolute;
   }
 }
+
+/* Home Page */
 
 .promo{
   height:@xx-large;
@@ -54,12 +65,21 @@
 }
 
 .parent{
-  a.right-link{
+  .right-link{
     position: absolute;
     right:0;
     bottom:0;
     margin-bottom:20px;
     text-transform: uppercase;
   }
+}
 
+/* Posts */
+.post-card{
+  margin:2em;
+  height:300px;
+  .post-card-img{
+    background-size:cover;
+    height:100%;
+  }
 }
