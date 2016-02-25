@@ -1,0 +1,88 @@
+/* Site headers */
+.feature-header {
+  height: 30rem;
+  position: relative;
+  display: block;
+}
+.feature-header img {
+  width: 17rem;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin-top: -8.5rem;
+  margin-left: -8.5rem;
+  position: absolute;
+}
+/* Shared global mixens */
+/* Size stuff */
+/* Positioning */
+.parent {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.center-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+.parent .right-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+/* Navigation */
+.brand-logo img {
+  width: 1.25em;
+  position: relative;
+  top: .25em;
+}
+/* Posts - list */
+.post-card {
+  margin: 2em;
+  height: 300px;
+}
+.post-card .post-card-img {
+  background-size: cover;
+  height: 100%;
+  content: ".";
+}
+.post-card:hover {
+  background: #eeeeee;
+}
+.post-card {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+/*Home page post preview cards*/
+.card-image span {
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+}
+.parent .right-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+/* Promo */
+.promo {
+  height: 25rem;
+  padding: 0.5rem;
+}
+.promo i {
+  font-size: 15rem;
+}
+.promo p {
+  color: black;
+}
+.promo:hover {
+  background: #eeeeee;
+}
+.promo {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}

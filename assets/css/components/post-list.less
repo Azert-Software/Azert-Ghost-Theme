@@ -1,0 +1,21 @@
+@import "colours";
+@import "globals";
+
+/* Posts - list */
+.post-card{
+  margin:2em;
+  height:300px;
+  .post-card-img{
+    background-size:cover;
+    height:100%;
+    content:".";
+  }
+}
+
+.post-card:hover{
+  background:@light-gray;
+}
+
+.post-card{
+  transition: @transition-background;
+}

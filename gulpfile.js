@@ -10,6 +10,7 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   typescript = require('gulp-typescript'),
   browserSync = require('browser-sync'),
+  concat = require('gulp-concat'),
   reload = browserSync.reload,
   plumber = require('gulp-plumber');
 
@@ -20,8 +21,8 @@ var gulp = require('gulp'),
 gulp.task('scripts',function(){
   gulp.src(['assets/js/**/*.ts'])
     .pipe(plumber())
-    .pipe(typescript())
-    .pipe(rename({suffix:'.min'}))
+    .pipe(rename({suffix:'.min',removeComments:true}))
+    .pipe(concat('azert.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))
     .pipe(reload({stream:true}));
@@ -32,14 +33,14 @@ gulp.task('scripts',function(){
 ////////////////////////////////////////////////////////
 
 gulp.task('less',function(){
-  gulp.src('assets/css/**/*.less')
+  gulp.src('assets/css/*.less')
     .pipe(plumber())
     .pipe(less())
     .pipe(autoprefixer())
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(rename({suffix:'.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(reload({stream:true}));
 });
 

@@ -1,4 +1,5 @@
 
+<div class="container">
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{! Previous/next page links - only displayed on page 2+ }}
     <ul class="center-align pagination">
@@ -6,12 +7,10 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-{{meta.pagination.pages}}
 <article class="post-card z-depth-1" style="opacity:0">
   <div class="row">
   <div class="col m4">
     <div class="post-card-img" style="background:url({{image}});background-size:cover;">
-      ""
     </div>
   </div>
   <div class="col m8">
@@ -28,7 +27,6 @@
         {{author}}
       </div>
         {{tags prefix=" on "}}
-
     </footer>
   </div>
 </div>
@@ -38,7 +36,7 @@
 {{! Previous/next page links - displayed on every page }}
 <ul class="center-align pagination">
 </ul>
-
+</div>
 <script>
 $(document).ready(function(){
   var pages = {{pagination.pages}};
@@ -47,31 +45,14 @@ $(document).ready(function(){
   var prev = {{#if pagination.prev}}{{pagination.prev}}{{else}}0{{/if}};
   var pageUrl = "{{page_url}}";
 
-  if(prev > 0)
-    $(".pagination").append("<li class='waves-effect'><a href='{{page_url pagination.prev}}'><i class='material-icons'>chevron_left</i></a></li>");
-    else {
-        $(".pagination").append("<li class='disabled'><a><i class='material-icons'>chevron_left</i></a></li>");
-    }
-
-  for(var i = 1; i <= pages;i++){
-    if(i == page){
-      $(".pagination").append(
-          "<li class='active' role='presentation'><a href='/page/" + i +"'>" + i + "</a></li>");
-    }
-    else {
-      $(".pagination").append(
-          "<li class='waves-effect' role='presentation'><a href='/page/" + i + "'>" + i + "</a></li>");
-    }
-  }
-
-  if(next > 0)
-    $(".pagination").append("<li class='waves-effect'><a href='{{page_url pagination.next}}'><i class='material-icons'>chevron_right</i></a></li>");
-    else {
-        $(".pagination").append("<li class='disabled'><a><i class='material-icons'>chevron_right</i></a></li>");
-    }
-
+  var pagination = new Pagination(pages,page,next,prev,pageUrl);
+  pagination.buildPagination($(".pagination"));
+  
   $(".post-card").each(function(index){
-    $(this).delay(200*index).animate(
+    var height = $(this).outerHeight();
+    $(this).find(".post-card-img").height(height);
+
+    $(this).delay(500*index).animate(
       {
         opacity:1
       },500
