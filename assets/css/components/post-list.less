@@ -8,7 +8,6 @@
   .post-card-img{
     background-size:cover;
     height:100%;
-    content:".";
   }
 }
 
@@ -18,4 +17,13 @@
 
 .post-card{
   transition: @transition-background;
+}
+
+.post-card{
+    .post-header,.post-excerpt{
+        color:@black !important;
+      }
+    h1:hover{
+      color:@url-blue;
+    }
 }

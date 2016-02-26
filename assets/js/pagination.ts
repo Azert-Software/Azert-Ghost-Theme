@@ -1,6 +1,6 @@
 /// <reference path="typings/jquery/jquery.d.ts" />
 
-export class Pagination{
+class Pagination{
   private totalPages:number;
   private currPage:number;
   private nextPage:number;

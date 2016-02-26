@@ -22,6 +22,7 @@ gulp.task('scripts',function(){
   gulp.src(['assets/js/**/*.ts'])
     .pipe(plumber())
     .pipe(rename({suffix:'.min',removeComments:true}))
+    .pipe(typescript({module:"amd",removeComments:true }))
     .pipe(concat('azert.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js'))

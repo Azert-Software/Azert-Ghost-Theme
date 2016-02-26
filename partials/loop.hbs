@@ -7,19 +7,21 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
+<div class="row">
 <article class="post-card z-depth-1" style="opacity:0">
-  <div class="row">
+  <a href="{{url}}">
   <div class="col m4">
     <div class="post-card-img" style="background:url({{image}});background-size:cover;">
     </div>
   </div>
+
   <div class="col m8">
-    <header class="post-header">
-      <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+  <header class="post-header">
+      <h1 class="post-title">{{{title}}}</h2>
       <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
     </header>
     <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+        <p>{{excerpt words="26"}}...</p>
     </section>
     <footer class="post-meta">
       <div class="chip">
@@ -29,8 +31,10 @@
         {{tags prefix=" on "}}
     </footer>
   </div>
-</div>
+  </a>
+
 </article>
+</div>
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}
@@ -47,7 +51,7 @@ $(document).ready(function(){
 
   var pagination = new Pagination(pages,page,next,prev,pageUrl);
   pagination.buildPagination($(".pagination"));
-  
+
   $(".post-card").each(function(index){
     var height = $(this).outerHeight();
     $(this).find(".post-card-img").height(height);
