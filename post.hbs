@@ -5,46 +5,35 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{> header}}
+<div class="row">
+  <main class="container" role="main">
+  <div class="col m9">
+    {{#post}}
 
-{{#post}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h1 class="post-title">{{title}}</h1>
+                <section class="post-meta">
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                </section>
+                <div class="chip">
+                  {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                  {{author}}
+                </div>
+            </header>
 
-<main class="container" role="main">
-    <article class="{{post_class}}">
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+            <section class="post-content">
+                {{content}}
             </section>
-            <div class="chip">
-              {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-              {{author}}
-            </div>
-        </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+        </article>
 
-    </article>
-</main>
+    {{/post}}
+  </div>
 
-<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
-</aside>
-
-{{/post}}
+  <div class="col m3">
+    {{> latest-posts-aside}}
+    {{> tag-list}}
+  </div>
+    </main>
+</div>

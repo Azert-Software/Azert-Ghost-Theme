@@ -1,0 +1,12 @@
+<aside class="latest-posts collection z-depth-1">
+  <header>
+    <h4>
+      Topics
+    </h4>
+  </header>
+  {{#get "tags"}}
+    {{#foreach tags}}
+      <a href="{{url}}" class="collection-item">{{name}}</a>
+    {{/foreach}}
+  {{/get}}
+</aside>

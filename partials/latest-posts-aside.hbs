@@ -1,0 +1,16 @@
+
+<aside class="latest-posts collection z-depth-1">
+  <header>
+    <h4>
+      Latest Posts
+    </h4>
+  </header>
+  {{#get "posts" limit="5"}}
+    {{#foreach posts}}
+        <a href="{{url}}" class="collection-item">
+        {{title}}<br/>
+        <small>{{date published_at format="DD MMMM YYYY"}}</small>
+        </a>
+    {{/foreach}}
+  {{/get}}
+</aside>
