@@ -26,13 +26,17 @@
   margin-left: auto;
   margin-right: auto;
 }
-.chip a {
-  color: #039be5;
-}
 pre {
   padding: 1rem;
   border-radius: 5px;
   background: #e2e2e2;
+  font-size: .75em;
+}
+.chip {
+  border-radius: 0;
+}
+a {
+  color: #048e81;
 }
 .parent .right-link {
   position: absolute;
@@ -40,6 +44,10 @@ pre {
   bottom: 0;
   margin-bottom: 20px;
   text-transform: uppercase;
+}
+.card-image {
+  height: 15rem;
+  background: #048e81;
 }
 /* Navigation */
 .brand-logo img {
@@ -106,10 +114,49 @@ pre {
 }
 .post .post-header {
   text-align: center;
+  background: #048e81;
+  color: #fff;
+}
+.post-content img {
+  width: 100%;
+  height: auto;
 }
 footer.page-footer {
   background: #455a64;
 }
 footer.page-footer .footer-copyright {
   background: #42545c;
+}
+.post-header {
+  height: 30rem;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  display: block;
+  background: #048e81;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.post-header .container {
+  padding-top: 10rem;
+}
+.post-header .container .post-meta {
+  margin-top: 1.8rem;
+}
+.latest-posts header {
+  padding: 0 20px;
+}
+.latest-posts .card-image {
+  height: 30rem;
+}
+.post-header-meta {
+  padding-top: 1.8rem;
+  text-transform: uppercase;
+}
+.post-header-meta .chip {
+  margin-top: 1rem;
+}
+.post-header-meta .divider {
+  margin-top: 1.8rem;
 }

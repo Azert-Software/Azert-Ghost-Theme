@@ -1,0 +1,21 @@
+
+{{#post }}
+  <aside class="post-header-meta">
+    <section class="post-published">
+        <span>Published </span>
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+          by
+          {{#author}}
+            <a href="{{url}}" rel="author">{{name}}</a>
+          {{/author}}
+    </section>
+    {{#if tags}}
+      {{#foreach tags}}
+        <div class="chip">
+          <a href={{url}} title="{{name }}">{{name}}</a>
+        </div>
+      {{/foreach}}
+    {{/if}}
+    <div class="divider"></div>
+  </aside>
+{{/post}}
