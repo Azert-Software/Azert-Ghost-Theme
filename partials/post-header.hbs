@@ -1,9 +1,32 @@
 {{#post}}
 <div class="row">
-  <header class="post-header" style="{{#if image}}background:url({{image}}) no-repeat center center;background-size:cover;{{/if}}">
+  <header class="post-full-header z-depth-2" style="{{#if image}}background:url({{image}}) no-repeat center center;background-size:cover;{{/if}}">
     <div class="container">
-      <h1 class="post-title">{{title}}</h1>
-    <div>
+      <h1 class="post-title ">{{title}}</h1>
+    </div>
+    {{#if image}}<img id="header-img" src="{{image}}" style="display:none;"/>{{/if}}
   </header>
 </div>
 {{/post}}
+
+<script>
+$(document).ready(function(){
+  var img = $(".post-full-header").find("img")[0];
+
+  if(img === undefined)
+    return false;
+
+  var colourThief = new ColorThief();
+  var color = colourThief.getColor(img);
+
+  $(".navbar-fixed nav").css("background-color","rgb(" + color[0] + "," + color[1] + "," + color[2] + ")");
+
+  var yiq = ((color[0])+(color[1])+(color[2]))/1000;
+  var contrastColour = (yiq >= .5) ? 'black' : 'white';
+
+  if(contrastColour == "black"){
+    $(".navbar-fixed nav a,.post-full-header h1").css("color","black");
+    $(".navbar-fixed nav a").removeClass("white-text");
+  }
+  });
+</script>

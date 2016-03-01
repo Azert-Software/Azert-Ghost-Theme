@@ -16,6 +16,9 @@
 }
 /* Shared global mixens */
 /* Size stuff */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 /* Positioning */
 .parent {
   display: block;
@@ -48,6 +51,9 @@ a {
 .card-image {
   height: 15rem;
   background: #048e81;
+}
+.card-content {
+  height: 170px;
 }
 /* Navigation */
 .brand-logo img {
@@ -127,7 +133,7 @@ footer.page-footer {
 footer.page-footer .footer-copyright {
   background: #42545c;
 }
-.post-header {
+.post-full-header {
   height: 30rem;
   position: relative;
   color: #fff;
@@ -137,18 +143,17 @@ footer.page-footer .footer-copyright {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-transform: uppercase;
 }
-.post-header .container {
-  padding-top: 10rem;
+.post-full-header h1 {
+  letter-spacing: 1.2rem;
+  font-size: 7rem;
 }
-.post-header .container .post-meta {
-  margin-top: 1.8rem;
+.post-full-header .container {
+  padding-top: 8rem;
 }
 .latest-posts header {
   padding: 0 20px;
-}
-.latest-posts .card-image {
-  height: 30rem;
 }
 .post-header-meta {
   padding-top: 1.8rem;

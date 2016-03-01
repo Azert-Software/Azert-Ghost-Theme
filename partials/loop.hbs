@@ -6,41 +6,50 @@
     </ul>
 
 {{! This is the post loop - each post will be output using this markup }}
-{{#foreach posts}}
 <div class="row">
-<article class="post-card z-depth-1" style="opacity:0">
-  <a href="{{url}}">
-  <div class="col m4">
-    <div class="post-card-img" style="background:url({{image}});background-size:cover;">
-    </div>
-  </div>
-
-  <div class="col m8">
-  <header class="post-header">
-      <h1 class="post-title">{{{title}}}</h2>
-      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}}...</p>
-    </section>
-    <footer class="post-meta">
-      <div class="chip">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-        {{author}}
+  <div class="col m9">
+    {{#foreach posts}}
+    <div class="row">
+    <article class="post-card z-depth-1" style="opacity:0">
+      <a href="{{url}}">
+      <div class="col m4">
+        <div class="post-card-img" style="background:url({{image}});background-size:cover;">
+        </div>
       </div>
-        {{tags prefix=" on "}}
-    </footer>
+      <div class="col m8">
+      <header class="post-header">
+          <h1 class="post-title">{{{title}}}</h2>
+          <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt words="26"}}...</p>
+        </section>
+        <footer class="post-meta">
+          <div class="chip">
+            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+            {{author}}
+          </div>
+            {{tags prefix=" on "}}
+        </footer>
+      </div>
+      </a>
+
+    </article>
+    </div>
+    {{/foreach}}
   </div>
-  </a>
-
-</article>
+  <div class="col m3">
+    {{> latest-posts-aside}}
+    {{> tag-list}}
+  </div>
 </div>
-{{/foreach}}
-
-{{! Previous/next page links - displayed on every page }}
-<ul class="center-align pagination">
-</ul>
+  {{! Previous/next page links - displayed on every page }}
+  <ul class="center-align pagination">
+  </ul>
 </div>
+
+
+
 <script>
 $(document).ready(function(){
   var pages = {{pagination.pages}};
