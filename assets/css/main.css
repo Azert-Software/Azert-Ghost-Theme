@@ -14,10 +14,14 @@
   margin-left: -18.5rem;
   position: absolute;
 }
+.post-template {
+  display: none;
+}
 /* Shared global mixens */
 /* Size stuff */
 body {
   font-family: 'Open Sans', sans-serif;
+  background: #e2e2e2;
 }
 /* Positioning */
 .parent {
@@ -40,6 +44,9 @@ pre {
 }
 a {
   color: #048e81;
+}
+.post-card {
+  background: #fff;
 }
 .parent .right-link {
   position: absolute;
@@ -66,15 +73,17 @@ a {
 }
 /* Posts - list */
 .post-card {
-  margin: 2em;
-  height: 300px;
+  cursor: pointer;
 }
 .post-card .post-card-img {
   background-size: cover;
   height: 100%;
 }
+.post-card .post-body {
+  margin: 0 1rem 1.5rem 0;
+}
 .post-card:hover {
-  background: #e2e2e2;
+  background: #ddd;
 }
 .post-card {
   -webkit-transition: background 0.3s;
@@ -83,9 +92,6 @@ a {
 .post-card .post-header,
 .post-card .post-excerpt {
   color: #232323 !important;
-}
-.post-card h1:hover {
-  color: #039be5;
 }
 /*Home page post preview cards*/
 .card-image span {
@@ -136,9 +142,12 @@ footer.page-footer .footer-copyright {
 .post-full-header {
   height: 30rem;
   position: relative;
+  display: block;
   color: #fff;
   text-align: center;
-  display: block;
+  display: table-cell;
+  width: 100vw;
+  vertical-align: middle;
   background: #048e81;
   background-size: cover;
   background-position: center;
@@ -149,8 +158,9 @@ footer.page-footer .footer-copyright {
   letter-spacing: 1.2rem;
   font-size: 7rem;
 }
-.post-full-header .container {
-  padding-top: 8rem;
+.latest-posts {
+  background: #fff;
+  margin: 0 0 1rem 0 !important;
 }
 .latest-posts header {
   padding: 0 20px;
@@ -164,4 +174,10 @@ footer.page-footer .footer-copyright {
 }
 .post-header-meta .divider {
   margin-top: 1.8rem;
+}
+.author-template .post-full-header img {
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+  width: 20%;
+  max-width: 200px;
 }

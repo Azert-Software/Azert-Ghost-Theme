@@ -20,6 +20,7 @@ class Pagination{
   }
 
   buildPagination(pageObj:JQuery){
+    console.log(this.pageUrl);
     if(this.prevPage > 0)
         $(pageObj).append("<li class='waves-effect'><a href='" + this.pageUrl + this.prevPage +"'<i class='material-icons'>chevron_left</i></a></li>");
       else {
@@ -29,11 +30,11 @@ class Pagination{
     for(var i = 1; i <= this.totalPages;i++){
       if(i == this.currPage){
         $(pageObj).append(
-            "<li class='active' role='presentation'><a href='/page/" + i +"'>" + i + "</a></li>");
+            "<li class='active' role='presentation'><a href=''>" + i + "</a></li>");
       }
       else {
         $(pageObj).append(
-            "<li class='waves-effect' role='presentation'><a href='/page/" + i + "'>" + i + "</a></li>");
+            "<li class='waves-effect' role='presentation'><a href='"+ this.pageUrl + "page/" + i + "'>" + i + "</a></li>");
       }
     }
 

@@ -5,3 +5,34 @@
 {{> header}}
 
 {{> loop}}
+
+<script>
+$(document).ready(function(){
+  var pages = {{pagination.pages}};
+  var page = {{pagination.page}};
+  var next = {{#if pagination.next}}{{pagination.next}}{{else}}0{{/if}};
+  var prev = {{#if pagination.prev}}{{pagination.prev}}{{else}}0{{/if}};
+  var pageUrl = "{{page_url}}";
+
+  var pagination = new Pagination(pages,page,next,prev,pageUrl);
+  pagination.buildPagination($(".pagination"));
+
+  $(".post-card").each(function(index){
+    var height = $(this).outerHeight();
+
+    $(this).find(".post-card-img").height(height);
+
+    $(this).delay(500*index).animate(
+      {
+        opacity:1
+      },500
+    );
+  });
+});
+
+$( window ).resize(function() {
+  $(".post-card").each(function(){
+    $(this).find(".post-card-img").height($(this).outerHeight());
+  });
+});
+</script>

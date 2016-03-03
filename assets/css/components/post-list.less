@@ -3,16 +3,18 @@
 
 /* Posts - list */
 .post-card{
-  margin:2em;
-  height:300px;
+  cursor:pointer;
   .post-card-img{
     background-size:cover;
     height:100%;
   }
+  .post-body{
+    margin:0 1rem 1.5rem 0;
+  }
 }
 
 .post-card:hover{
-  background:@light-gray;
+  background:#ddd;
 }
 
 .post-card{
@@ -23,7 +25,4 @@
     .post-header,.post-excerpt{
         color:@black !important;
       }
-    h1:hover{
-      color:@url-blue;
-    }
 }

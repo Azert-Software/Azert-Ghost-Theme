@@ -10,23 +10,19 @@
 {{/post}}
 
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
   var img = $(".post-full-header").find("img")[0];
 
-  if(img === undefined)
-    return false;
-
-  var colourThief = new ColorThief();
-  var color = colourThief.getColor(img);
-
-  $(".navbar-fixed nav").css("background-color","rgb(" + color[0] + "," + color[1] + "," + color[2] + ")");
-
-  var yiq = ((color[0])+(color[1])+(color[2]))/1000;
-  var contrastColour = (yiq >= .5) ? 'black' : 'white';
-
-  if(contrastColour == "black"){
-    $(".navbar-fixed nav a,.post-full-header h1").css("color","black");
-    $(".navbar-fixed nav a").removeClass("white-text");
+  if(img === undefined){
+      $("body").fadeIn("slow");
+      return false;
   }
-  });
+
+  var colorHelper = new ColourHelper();
+
+  colorHelper.SetBackgroundColour($(".post-full-header").find("img"),$(".navbar-fixed nav"));
+
+  colorHelper.SetTextColour($(".navbar-fixed nav"),$(".navbar-fixed nav a,.post-full-header h1"));
+  $("body").fadeIn("slow");
+});
 </script>

@@ -10,35 +10,33 @@
   <div class="col m9">
     {{#foreach posts}}
     <div class="row">
-    <article class="post-card z-depth-1" style="opacity:0">
+    <article class="post-card z-depth-1 flow-text" style="opacity:0">
       <a href="{{url}}">
-      <div class="col m4">
+      <div class="row">
+      <div class="col m4 hide-on-small-only">
         <div class="post-card-img" style="background:url({{image}});background-size:cover;">
         </div>
       </div>
-      <div class="col m8">
+      <div class="col m8 s12">
       <header class="post-header">
           <h1 class="post-title">{{{title}}}</h2>
           <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+          by {{author.name}}
         </header>
-        <section class="post-excerpt">
+        <div class="post-body">
+        <section class="post-excerpt ">
             <p>{{excerpt words="26"}}...</p>
         </section>
-        <footer class="post-meta">
-          <div class="chip">
-            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-            {{author}}
-          </div>
-            {{tags prefix=" on "}}
-        </footer>
       </div>
+      </div>
+    </div>
       </a>
 
     </article>
     </div>
     {{/foreach}}
   </div>
-  <div class="col m3">
+  <div class="col m3 s12">
     {{> latest-posts-aside}}
     {{> tag-list}}
   </div>
@@ -47,29 +45,3 @@
   <ul class="center-align pagination">
   </ul>
 </div>
-
-
-
-<script>
-$(document).ready(function(){
-  var pages = {{pagination.pages}};
-  var page = {{pagination.page}};
-  var next = {{#if pagination.next}}{{pagination.next}}{{else}}0{{/if}};
-  var prev = {{#if pagination.prev}}{{pagination.prev}}{{else}}0{{/if}};
-  var pageUrl = "{{page_url}}";
-
-  var pagination = new Pagination(pages,page,next,prev,pageUrl);
-  pagination.buildPagination($(".pagination"));
-
-  $(".post-card").each(function(index){
-    var height = $(this).outerHeight();
-    $(this).find(".post-card-img").height(height);
-
-    $(this).delay(500*index).animate(
-      {
-        opacity:1
-      },500
-    );
-  });
-});
-</script>
