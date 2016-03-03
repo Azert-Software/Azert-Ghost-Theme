@@ -58,9 +58,24 @@ a {
 .card-image {
   height: 15rem;
   background: #048e81;
+  cursor: pointer;
+  -webkit-transition: -webkit-filter .6s;
+  transition: -webkit-filter .6s;
+  transition: filter .6s;
+  transition: filter .6s, -webkit-filter .6s;
+}
+.card-image:hover {
+  -webkit-filter: grayscale(60%);
+          filter: grayscale(60%);
 }
 .card-content {
   height: 170px;
+}
+.card-title small {
+  font-size: .5em;
+}
+.home-template .brand-logo {
+  display: none;
 }
 /* Navigation */
 .brand-logo img {
@@ -138,6 +153,12 @@ footer.page-footer {
 }
 footer.page-footer .footer-copyright {
   background: #42545c;
+}
+footer.page-footer .nav a {
+  color: #fff;
+}
+footer.page-footer .nav a:hover {
+  color: #048e81;
 }
 .post-full-header {
   height: 30rem;

@@ -1,0 +1,28 @@
+{{#page}}
+<div class="row">
+  <header class="post-full-header z-depth-2" style="{{#if image}}background:url({{image}}) no-repeat center center;background-size:cover;{{/if}}">
+    <div class="container">
+      <h1 class="post-title ">{{title}}</h1>
+    </div>
+    {{#if image}}<img id="header-img" src="{{image}}" style="display:none;"/>{{/if}}
+  </header>
+</div>
+{{/page}}
+
+<script>
+$(document).ready(function() {
+  var img = $(".post-full-header").find("img")[0];
+
+  if(img === undefined){
+      $("body").fadeIn("slow");
+      return false;
+  }
+
+  var colorHelper = new ColourHelper();
+
+  colorHelper.SetBackgroundColour($(".post-full-header").find("img"),$(".navbar-fixed nav"));
+
+  colorHelper.SetTextColour($(".navbar-fixed nav"),$(".navbar-fixed nav a,.post-full-header h1"));
+  $("body").fadeIn("slow");
+});
+</script>

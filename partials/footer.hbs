@@ -2,26 +2,22 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Connect with Azert Software</h5>
+        <h5 class="white-text">Connect with Azert</h5>
         <p class="grey-text text-lighten-4">We can be found all over the internet, starting below</p>
         <ul>
             <li>
-              <a href="https://twitter.com/MarkNumskull" class="twitter-follow-button" data-show-count="false">Follow @MarkNumskull</a>
+              <a href="https://twitter.com/AzertSoftware" class="twitter-follow-button" data-show-count="false">Follow @Azert</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </li>
             <li>
               <!-- Place this tag where you want the button to render. -->
-                <a class="github-button" href="https://github.com/marknumskull" aria-label="Follow @marknumskull on GitHub">Follow @marknumskull</a>
+                <a class="github-button" href="https://github.com/azert-software" aria-label="Follow @azert on GitHub">Follow @azert</a>
             </li>
         </ul>
       </div>
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">Links</h5>
-        <ul>
-          {{#foreach navigation}}
-              <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a class="white-text" href="{{url absolute="true"}}">{{label}}</a></li>
-          {{/foreach}}
-        </ul>
+        {{navigation}}
       </div>
     </div>
   </div>

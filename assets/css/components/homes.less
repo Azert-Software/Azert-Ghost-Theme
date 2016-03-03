@@ -13,8 +13,26 @@
 .card-image{
   height:15rem;
   background:@main-color;
+  cursor:pointer;
+  transition: filter .6s;
+}
+
+.card-image:hover{
+  filter:grayscale(60%);
 }
 
 .card-content{
   height:170px;
+}
+
+.card-title{
+  small{
+    font-size:.5em;
+  }
+}
+
+.home-template{
+  .brand-logo{
+    display: none;
+  }
 }

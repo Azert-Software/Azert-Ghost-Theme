@@ -22,7 +22,7 @@ class Pagination{
   buildPagination(pageObj:JQuery){
     console.log(this.pageUrl);
     if(this.prevPage > 0)
-        $(pageObj).append("<li class='waves-effect'><a href='" + this.pageUrl + this.prevPage +"'<i class='material-icons'>chevron_left</i></a></li>");
+        $(pageObj).append("<li class='waves-effect'><a href='" + this.pageUrl + this.prevPage +"'><i class='material-icons'>chevron_left</i></a></li>");
       else {
         $(pageObj).append("<li class='disabled'><a><i class='material-icons'>chevron_left</i></a></li>");
       }

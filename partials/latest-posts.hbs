@@ -9,18 +9,14 @@
         <div class="row">
           {{#foreach posts}}
             <div class="col s12 m4">
+              <a href={{url}} title="Read {{title}}">
               <article class="card">
                 <div class="card-image" style="{{#if image}}background:url({{image}}) no-repeat center center;background-size:cover;{{/if}}">
-                  <span class="card-title">{{title}}</span>
+                  <span class="card-title">{{title}}<br />
+                  <small>{{date published_at format="DD MMMM YYYY"}}</small></span>
                 </div>
-                <div class="card-content">
-                  <small>{{date published_at format="DD MMMM YYYY"}}</small>
-                    <p>{{#if meta_description}}{{meta_description}}...{{else}}{{excerpt words="12"}}...{{/if}}</p>
-                </div>
-                <footer class="card-action">
-                  <a href="{{url}}">Read Post</a>
-                </footer>
               </article>
+            </a>
             </div>
           {{/foreach}}
         </div>

@@ -12,13 +12,15 @@
   {{#author}}
       <section class="author-profile inner">
           {{#if bio}}
-              <h2 class="author-bio">{{bio}}</h2>
+           <div class="card-panel">
+              <p class="author-bio flow-text">
+                {{bio}}
+              </p>
+              <p>
+                Browse all posts by {{name}} below
+              </p>
+            </div>
           {{/if}}
-          <div class="author-meta">
-              {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-              {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-              <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
-          </div>
       </section>
   {{/author}}
 </div>
